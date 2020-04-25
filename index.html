@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Odds Converter</title>
+  </head>
+  <body>
+    <h1>ODDS CONVERTER</h1>
+    <div class="odds-converter">
+      <div class="euodds">
+        <label for="EU Odds"
+          ><h2>Decimal</h2>
+          European Odds </label
+        ><br />
+        <input
+          type="text"
+          name="EU Odds"
+          id="decimalOdds"
+          placeholder="e.g. 1.55"
+        />
+      </div>
+      <br />
+      <div class="usodds">
+        <label for="US Odds"
+          ><h2>Moneyline</h2>
+          American Odds </label
+        ><br />
+        <input
+          type="text"
+          name="US Odds"
+          id="moneylineOdds"
+          placeholder="e.g. -155"
+        />
+      </div>
+      <br />
+      <div class="ukodds">
+        <label for="UK Odds"
+          ><h2>Fractional</h2>
+          British Odds </label
+        ><br />
+        <input
+          type="text"
+          name="UK Odds"
+          id="fractionalOdds"
+          placeholder="e.g. 1/5"
+        />
+      </div>
+      <br />
+      <div class="probability">
+        <label for="probability"
+          ><h2>Implied Probability</h2>
+          Implied chance of outcome</label
+        ><br />
+        <input type="text" id="probability" placeholder="e.g. 55%" />
+      </div>
+      <br />
+
+      <button class="clear" id="clear">Clear</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
