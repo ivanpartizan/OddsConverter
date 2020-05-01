@@ -21,7 +21,7 @@ h1 {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 66vh;
   justify-content: flex-start;
   align-items: center;
   background-color: #496a84;
@@ -30,7 +30,7 @@ h1 {
 
 .clear {
   font-family: "Nanum Gothic", sans-serif;
-  background-color: #48eece;
+  background-color: white;
   color: #496a84;
   position: absolute;
   top: 10px;
