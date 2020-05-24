@@ -80,16 +80,35 @@ function calculateUK() {
 }
 
 function calculate() {
-  decimalOdds.value = ((1 / Number(probability.value)) * 100).toFixed(2);
+  if (probability.value.includes("%")) {
+    decimalOdds.value = (
+      (1 /
+        Number(probability.value.substring(0, probability.value.length - 1))) *
+      100
+    ).toFixed(2);
+  } else {
+    decimalOdds.value = ((1 / Number(probability.value)) * 100).toFixed(2);
+  }
 
-  if (probability.value > 50) {
+  if (eval(probability.value) > 50) {
     moneylineOdds.value = `-${(
-      (probability.value / (100 - probability.value)) *
+      eval(probability.value / (100 - probability.value)) * 100
+    ).toFixed(0)}`;
+  } else if (eval(probability.value) > 50 && probability.value.includes("%")) {
+    moneylineOdds.value = `-${(
+      (eval(probability.value.substring(0, probability.value.length - 1)) /
+        (100 -
+          eval(probability.value.substring(0, probability.value.length - 1)))) *
       100
     ).toFixed(0)}`;
-  } else {
+  } else if (eval(probability.value) <= 50 && probability.value.includes("%")) {
     moneylineOdds.value = `+${(
-      ((100 - probability.value) / probability.value) *
+      (100 - eval(probability.value) / eval(probability.value)) *
+      100
+    ).toFixed(0)}`;
+  } else if (eval(probability.value) <= 50) {
+    moneylineOdds.value = `+${(
+      ((100 - eval(probability.value)) / eval(probability.value)) *
       100
     ).toFixed(0)}`;
   }
